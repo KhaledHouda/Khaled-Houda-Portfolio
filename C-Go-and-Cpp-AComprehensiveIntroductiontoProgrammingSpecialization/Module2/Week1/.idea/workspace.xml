@@ -13,10 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1fe930d-3a56-47c3-a4ce-54787928f9e2" name="Changes" comment="C practice questions week 1">
-      <change afterPath="$PROJECT_DIR$/Assert.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessor code.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week2/structs.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3BREnRROriZwsU1lysOtMRHtDrC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,7 +46,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/khaled/Documents/Khaled-Houda-Portfolio/C.Go.and.Cpp:AComprehensiveIntroductiontoProgrammingSpecialization/Module2/Week1/preprocessor code.c",
+    "last_opened_file_path": "/home/khaled/Documents/Khaled-Houda-Portfolio/C-Go-and-Cpp-AComprehensiveIntroductiontoProgrammingSpecialization",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,7 +88,25 @@
       <option name="presentableId" value="Default" />
       <updated>1774443648574</updated>
       <workItem from="1774443649735" duration="12413000" />
+      <workItem from="1774699134612" duration="583000" />
     </task>
+    <task id="LOCAL-00001" summary="C practice questions week 1">
+      <option name="closed" value="true" />
+      <created>1774699433593</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774699433593</updated>
+    </task>
+    <task id="LOCAL-00002" summary="C practice questions week 1">
+      <option name="closed" value="true" />
+      <created>1774699442801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774699442801</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
