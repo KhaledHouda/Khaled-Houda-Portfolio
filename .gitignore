@@ -1,0 +1,23 @@
+build/
+# --- IDE / Editor Trash ---
+
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- C / C++ Build Artifacts ---
+cmake-build-debug/
+cmake-build-release/
+obj/
+bin/
+*.o
+*.out
+*.exe
+*.app
+
+# --- Git / OS Specific ---
+.git/
+*.log
+*.tmp
