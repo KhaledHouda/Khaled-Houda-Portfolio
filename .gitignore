@@ -9,6 +9,6 @@ build/
 /dataSources.local.xml
 *.o
 *.exe
-**/.idea/
-
+**/.idea
+.idea/
 
