@@ -28,13 +28,6 @@ typedef struct List{ //atom list custom type
     struct List* next;
 }List;
 
-List* create_list(Atom data){ //creates a list of atoms
-    List* head = malloc(sizeof(List));
-    head->data = data;
-    head->next = NULL;
-    return head;
-}
-
 
 List* add_atom_to_list(List* head, char* name, char* symbol, float weight){
     Atom atom;
@@ -106,20 +99,18 @@ void free_atom_list(List* head){
     free(head);
     head = tempHead;
     }
-
-
 }
 
 
 int main(){
-    int list_size = 2;
+    int list_size = 10;
     //printf("type your 2 digit atom list size:"); //i hardcoded list size 10 but the code and logic for custom sizes is available
     //scanf("%3d",&list_size);
 
-    if(list_size>99){
-        printf("\nERROR: LIST SIZE TOO BIG, ABORTING PROGRAM");
-        return 0;
-    }
+    //if(list_size>99){
+        //printf("\nERROR: LIST SIZE TOO BIG, ABORTING PROGRAM");
+        //return 0;
+    //}
     printf("\n");
     List* atomList = make_atom_list(list_size);
     printAtomList(atomList);
