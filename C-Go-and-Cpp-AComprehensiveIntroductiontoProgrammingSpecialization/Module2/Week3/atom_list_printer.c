@@ -22,16 +22,7 @@ typedef struct{
     char* symbol;
     float weight;
 }Atom;
-Atom* create_Atom( char* name, char* symbol,const float* weight){ //creates an atom and returns a pointer to said atom
-    Atom* at = malloc(sizeof(Atom) );
-    if(at==NULL){return NULL;}
 
-    at->name = strdup(name); at->weight = *weight; at->symbol = strdup(symbol);
-
-    if(at->name == NULL || at->symbol == NULL){ free(at->name);free(at->symbol);free(at);return NULL;}
-
-    return at;
-}
 typedef struct List{ //atom list custom type
     Atom data;
     struct List* next;
@@ -44,22 +35,28 @@ List* create_list(Atom data){ //creates a list of atoms
     return head;
 }
 
-List* add_to_front(Atom data, List* h){ //LIFO style list adding elements to the beginning of the list rather than the end, bypasses the need for a tail iterator as we are always at the beginning of the list
-    List *head = create_list(data);
-    head->next = h;
+
+List* add_atom_to_list(List* head, char* name, char* symbol, float weight){
+    Atom atom;
+    atom.name = strdup(name);
+    atom.symbol = strdup(symbol);
+    atom.weight = weight;
+    List* newElement = malloc(sizeof(List));
+    if(newElement==NULL){return NULL;}
+    newElement->data = atom;
+    newElement->next = head;
+    head = newElement;
     return head;
 }
 
-
-
 List* make_atom_list(int length){ //logic for parameter input by the user plus assigning the info to each element in the list
     List *head = NULL;
-    Atom* temp_atom_ptr = NULL;
     char name[21];
     char symbol[3];
     float weight = 0;
     printf("====================\n");
     for(int i=0; i <length ; i++){
+        printf("please input the data for the first 10 elements of the periodic table.\n");
         printf("we are at element %d\n", i+1);
         printf("name: ");
         scanf(" %20s", name );
@@ -74,15 +71,13 @@ List* make_atom_list(int length){ //logic for parameter input by the user plus a
             continue;
         }
         printf("====================\n");
-        temp_atom_ptr = create_Atom(name, symbol, &weight);
-        head  = add_to_front( *temp_atom_ptr, head);
-        free(temp_atom_ptr);
+        head  = add_atom_to_list(head, name, symbol, weight);
     }
     return head;
 
 }
 
-void printAtomList(List* list , int list_size) {
+void printAtomList(List* list) {
     List *head = list;
     printf("printing Atom List.");
     fflush(stdout);
@@ -96,9 +91,9 @@ void printAtomList(List* list , int list_size) {
     printf("\n%-4s | %-12s | %-5s | %-10s\n", "ID", "Element", "Sym", "Weight");
     printf("------------------------------------------\n");
     while(list != NULL) {
-        const Atom* currentAtom = &(list->data);
+        const Atom currentAtom = list->data;
         counter++;
-        printf("| %-2d | %-12s | %-3s | %8.4f |\n", counter, currentAtom->name, currentAtom->symbol, currentAtom->weight);
+        printf("| %-2d | %-12s | %-3s | %8.4f |\n", counter, currentAtom.name, currentAtom.symbol, currentAtom.weight);
         list = list->next;
     }
 }
@@ -117,7 +112,7 @@ void free_atom_list(List* head){
 
 
 int main(){
-    int list_size = 10;
+    int list_size = 2;
     //printf("type your 2 digit atom list size:"); //i hardcoded list size 10 but the code and logic for custom sizes is available
     //scanf("%3d",&list_size);
 
@@ -127,7 +122,7 @@ int main(){
     }
     printf("\n");
     List* atomList = make_atom_list(list_size);
-    printAtomList(atomList,list_size);
+    printAtomList(atomList);
     free_atom_list(atomList);
     atomList=NULL;
 }
