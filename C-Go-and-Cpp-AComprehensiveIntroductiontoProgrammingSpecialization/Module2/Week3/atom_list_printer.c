@@ -66,7 +66,13 @@ List* make_atom_list(int length){ //logic for parameter input by the user plus a
         printf("\nsymbol: ");
         scanf(" %2s", symbol );
         printf("\nweight:");
-        scanf(" %f", &weight);
+        if (scanf(" %f", &weight) != 1) {
+            printf("Invalid input! Please enter a numeric weight.\n");
+            // Standard trick to clear the input buffer:
+            while (getchar() != '\n');
+            i--; // Don't count this failed attempt
+            continue;
+        }
         printf("====================\n");
         temp_atom_ptr = create_Atom(name, symbol, &weight);
         head  = add_to_front( *temp_atom_ptr, head);
