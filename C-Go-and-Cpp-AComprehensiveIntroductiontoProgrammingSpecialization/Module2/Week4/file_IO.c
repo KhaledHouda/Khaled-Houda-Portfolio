@@ -9,7 +9,7 @@
 
 void read_data(FILE *ptr, int d[], int *size){
     *size = 0;
-    while( fscanf(ptr, "%d", (&d[*size])) ==1 ){
+    while( fscanf(ptr, "%d", (&d[*size])) ==1 ){ //this converts the read char into integer and keeps doing so until a conversion fails
         (*size)++;
 
     }
@@ -38,7 +38,7 @@ int main() {
 
     ifp = fopen("myhw","r");
     read_data(ifp, data, &sz);
-    printf("my %d homework scores are: " , sz);
+    printf("my %d homework scores are:" , sz);
     print_data(data, sz);
     printf("\n average score was %10f" , average(data, sz));
     printf("\n\n");
