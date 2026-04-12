@@ -3,7 +3,6 @@
 //This document demonstrates
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 typedef struct rational {
     int numerator;
