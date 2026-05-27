@@ -11,7 +11,7 @@ int count_leading_zeros(uint32_t val);
 uint32_t byte_swap(uint32_t val);
 
 int main() {
-  // Tests für count_ones
+  // Tests für count_onesw
   printf("count_ones(0x00000000) = %d, expected 0\n", count_ones(0x00000000));
   printf("count_ones(0xffffffff) = %d, expected 32\n", count_ones(0xffffffff));
   printf("count_ones(0xabcdef12) = %d, expected 19\n", count_ones(0xabcdef12));

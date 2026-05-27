@@ -37,3 +37,41 @@ uint8_t extract_byte(uint32_t val, int byte){
     return val >>(byte * 8) & 0xff;
 }
 
+//we do a Counter class in cpp now. 
+class Counter{
+    int value; //private by default
+    public:
+    //functions
+        void reset(){value = 0;}
+        void inc(){value++;}
+        int read(){return value;}
+    
+        //default constructor
+        Counter(){
+            this->value = 0;
+            std::cout << "Default Counter created\n";
+        }
+
+        Counter(int value){
+            this->value = value;
+            std::cout << "Counter created with start value "<< value << endl;
+        }
+};
+
+//now how is the counter class diff compared to the counter diagram we had in the übung?
+
+class ModuloCounter : public Counter{
+    int moduloValue;
+    public:
+        void inc(){
+            if(read() ==  moduloValue-1){
+                reset();
+            }
+            else{Counter::inc();}
+
+        }
+
+    ModuloCounter(int moduloValue):Counter(0),moduloValue(moduloValue){
+        std::cout<<"overloaded ModuloCounter \n";
+    }
+};
