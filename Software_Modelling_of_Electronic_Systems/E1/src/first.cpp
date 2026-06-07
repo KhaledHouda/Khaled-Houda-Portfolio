@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <systemc>
 #include <string>
 using namespace std;
 #include <iostream>

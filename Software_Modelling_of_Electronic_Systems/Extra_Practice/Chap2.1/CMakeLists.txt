@@ -11,12 +11,14 @@ include_directories(.)
 add_executable(Chap2_1
         main.cpp
         mittelwert.cpp
-        mittelwert.h)
+        mittelwert.h
+        testbench/testbench.h
+        testbench/testbench.cpp)
 
 
 #COPY ALL UNDER THIS AROUND BUT MAKE SURE THE TARGET FOLDER IS CORRECTLY NAMED
-target_include_directories(Chap2_1 PRIVATE "C:/SystemC/systemc-3.0.2/src")
+#target_include_directories(Chap2_1 PRIVATE "C:/SystemC/systemc-3.0.2/src")
 
 # 2. Binary Linker Injection
 # Links the binary engine you just compiled directly into your practice executable
-target_link_libraries(Chap2_1 PRIVATE "C:/SystemC/systemc-3.0.2/cmake-build-debug/src/libsystemc.a")
+#target_link_libraries(Chap2_1 PRIVATE "C:/SystemC/systemc-3.0.2/cmake-build-debug/src/libsystemc.a")
